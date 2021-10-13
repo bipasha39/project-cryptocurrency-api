@@ -6,13 +6,11 @@
 
 A simple example looks like this:  
 
-<img src="SampleImage.png" width="350" /> 
+<img src="SampleImage.png" width="550" /> 
 
 ---
 
 ### For more advanced students
-
-**State** and **hooks** are not easy to grasp. When you create a functional component, you add state by using useState() with an initial value. You need to tell React that you will use this by adding `import React, { useState } from "react"`. If you set the state of a variable, you can change it. In this example, you can change the state of the image from **sun** to **rain** and see the images switch between sun and rain.
 
 1. Create a new project on your local computer using `npx create-react-app project-cryptocurrency'
 1. Delete the css from the App.css and index.css files and use `index.css` for your css (look at your previous projects how you set the initial general CSS)
@@ -21,16 +19,23 @@ A simple example looks like this:
 1. Create a functional component Coin inside this file (remember the React syntax!) and a `css ` file in same name.
 1. In the `return` of the component, add `<h1>Search Currency</h1>` to test the component
 1. To test if your React app is working, make sure you are in the project folder in your terminal and type `npm start` (you should see the text "Search Currency?" as title on the page)
-1. Create a hook with `image` and `setImage` and set the state with `"sun-image"` as default
+
+### For Fetching API
+
+1. Use `Use effect` to fetch the data from the API
+```js
+fetch("https://api.coingecko.com/api/v3/coins/markets?vs_currency=USD&order=market_cap_desc&per_page=100&page=1&sparkline=false")
+```
+
 1. Create a search input that will help you to find currency by there name.
 1. Create a `div` with class name `image-container`.
-1. Create a `handleClick()` function that uses the `setImage` hook (you can test if this works by doing a console.log 'sun' and 'rain' on click)
+1. Create a `handleClick()` function that uses the `setImage` hook (you can test if this works by doing a console.log)
 1. Now this can be difficult: you have to create a path to the images that changes when you click the button! You can use a **template literal** for this. In the `image-container` div, add `<img>` with `src={}` and inside the curly brackets add a template literal that holds the path to the images in your project's public/images folder (hint: you already have the variable `image` ...)
 1. Add CSS to style the page as you like (the color used for the title and the search input 
-1. **If you would like to build this app more interactive** and add more column, you can add more information using the same api   
-```js
-fetch("https://api.weatherbit.io/v2.0/current?lat=41.390205&lon=2.154007&key=2ac7e0a6ea244c14ae97c936f6d045c1")
-```
+1. 
+
+1. **If you would like to build this app more interactive** and add more column, you can add more information using the same api.   
+
 
 ## Please note:
 If you want to download a project on your local machine, do not fork it but clone the repo locally, on your computer. After that, create a new repo in your own GitHub account *with exactly the same project name*, and link the local repo to the remote repo in your GitHub account (see below). Why should you clone and not fork? It will show the project as **your own project** and not a fork of someone else's project. You can use it as a project for your portfolio.
